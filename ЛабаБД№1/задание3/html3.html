@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;">
+        <p>Введите число:</p>
+        <input type="number" id="textbox">
+        <button onclick="fun1()" id="btn1">OK</button>
+    </div>
+</body>
+<script type="text/javascript">
+    //функция интерфейса
+    function fun1() {
+        var value = document.getElementById("textbox").value;
+        if (value % 2 == 0) {
+            alert("Факториал числа " + value + " = " + factorial(value));
+        } else {
+            avgValue(value);
+        }
+    }
+
+    //функция поиска факториала
+    function factorial(value) {
+        return (value != 1) ? value * factorial(value - 1) : 1;
+    }
+
+    //Функция поиска среднего значения
+    function avgValue(value) {
+        var arr = []
+        for (let i = 1; value >= i; i++) {
+            arr.push(i)
+        }
+        var result = arr.reduce(function(sum, current) {
+            return sum + current;
+        }, 0);
+        alert("Среднее значение чисел от 1 до " + value + " равно " + result)
+    }
+</script>
+
+</html>

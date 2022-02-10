@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Массивы</title>
+</head>
+
+<body>
+    <div style="display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;">
+        <p>Введите код нап равления:</p>
+        <input type="number" id="textbox">
+        <button onclick="findByID()" id="findButton">OK</button>
+    </div>
+    <div id="" class="div">
+    </div>
+</body>
+<script type="text/javascript">
+    var studentsArr = [
+        ["Denov", "Denis", 2, "03"],
+        ["Kabikov", "Viktor", 1, "02"],
+        ["Kalashov", "Nikita", 3, "03"],
+        ["Pistoletov", "Yuriy", 2, "02"],
+        ["Ivanov", "Sergey", 1, "04"],
+        ["Anosov", "Den", 2, "04"]
+    ]
+
+    function findByID() {
+        document.querySelector('.div').innerHTML = ""
+        for (let i of studentsArr) {
+            console.log(i[3])
+            if (i[3] == document.getElementById('textbox').value) {
+                document.querySelector(".div").innerHTML += `<ul><li>${i[0]} ${i[1]} курс ${i[2]} код направления ${i[3]}</li></ul>`
+            }
+        }
+    }
+</script>
+
+</html>

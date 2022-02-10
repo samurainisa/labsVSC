@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shkolnik</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+    let shkolnik = {
+        firstName: "Никита",
+        lastName: "Садовиков",
+        thirdName: "Евгеньевич",
+        age: 2002,
+        class: 11,
+        lovedisc: [
+            "Разработка мобильных приложений",
+            "Прикладная статистика",
+            "Базы данных"
+        ],
+        propiska: {
+            contry: "Россия",
+            city: "Кемерово",
+            num: "89001238523",
+            numhome: 4,
+            location: {
+                locationcity: "Рудничный"
+            },
+        },
+    };
+
+    function print() {
+        document.write("<h3> ФИО, Год рождения, класс</h3>")
+        for (let i in shkolnik) {
+            if (i != "lovedisc" & i != "propiska")
+                document.write(shkolnik[i] + "<br/>")
+        }
+        document.write("<h3>Любимые дисциплины</h3>")
+        for (let j = 0; j < shkolnik.lovedisc.length; j++) {
+            document.write(shkolnik.lovedisc[j] + "<br/>")
+        }
+        document.write("<h3>Прописка</h3>")
+
+        for (let k in shkolnik.propiska) {
+            if (k != "location")
+                document.write(shkolnik.propiska[k] + "<br/>")
+        }
+        for (let k in shkolnik.propiska.location) {
+            document.write("Район: " + shkolnik.propiska.location[k] + "<br/>")
+        }
+    }
+    print()
+</script>
+
+</html>
