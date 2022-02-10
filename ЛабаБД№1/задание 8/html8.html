@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shkolnik</title>
+</head>
+
+<body>
+    <div style="display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;">
+        <p>Введите год:</p>
+        <input type="number" id="textbox">
+        <button onclick="funCheck()" id="btn1">OK</button>
+    </div>
+    <div class="div" style="display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;">
+        Год до ввода года:
+    </div>
+    <div class="div2" style="display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;">
+        Год после ввода года:
+    </div>
+</body>
+<script type="text/javascript">
+    let shkolnik = {
+        name: "Nikita",
+        name2: "Sadovikov",
+        name3: "Evgenyevich",
+        age: 2002,
+        class: 11,
+        lovedisc: ["Dev Android", "Math", "Databases"]
+    };
+    console.log(shkolnik)
+    document.querySelector(".div").innerHTML += shkolnik.age
+
+    function funCheck() {
+        var year = document.getElementById("textbox").value;
+        proveYear(year)
+    }
+
+    function proveYear(year) {
+        let now = new Date(2022, 1, 10);
+        let nowMinusTwoHundred = new Date(1822, 1, 10);
+        if (nowMinusTwoHundred.getFullYear() <= year && year <= now.getFullYear()) {
+            console.log("Дата входит в промежуток")
+            document.querySelector(".div2").innerHTML = shkolnik.age = "Год после ввода года: " + year + " (Удовлетворяет условию)"
+        } else {
+            document.querySelector(".div2").innerHTML = shkolnik.age = "Год неверен" + " (Не удовлетворяет условию)"
+        }
+    }
+</script>
+
+</html>
