@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shkolnik</title>
+</head>
+
+<body>
+    <div style="display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;">
+        <p>Перевести в следующий класс класс:</p>
+        <button onclick="funCheck()" id="btn1">Перевести</button>
+    </div>
+    <div class="div" style="display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;">
+    </div>
+    <div class="div2" style="display: flex;
+    font-size: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;">
+    </div>
+</body>
+<script type="text/javascript">
+    let shkolnik = {
+        name: "Nikita",
+        name2: "Sadovikov",
+        name3: "Evgenyevich",
+        age: 2002,
+        class: 11,
+        lovedisc: ["Dev Android", "Math", "Databases"],
+        distanselearn: 9
+    };
+
+    function funCheck() {
+        let counter = 1
+        document.querySelector(".div").innerHTML = "На данный момент класс равен: " + shkolnik.distanselearn
+        if (9 <= shkolnik.distanselearn && shkolnik.distanselearn < 11) {
+            console.log("Класс после перевода " + shkolnik.distanselearn)
+        } else if (shkolnik.distanselearn == 11) {
+            document.querySelector(".div2").innerHTML = "Максимальный 11 класс достигнут"
+        }
+    }
+    console.log(shkolnik)
+</script>
+
+</html>
