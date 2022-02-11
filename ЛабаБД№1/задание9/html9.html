@@ -45,14 +45,16 @@
     };
 
     function funCheck() {
-        let counter = 1
+        let counter = 9
         document.querySelector(".div").innerHTML = "На данный момент класс равен: " + shkolnik.distanselearn
         if (9 <= shkolnik.distanselearn && shkolnik.distanselearn < 11) {
-            console.log("Класс после перевода " + shkolnik.distanselearn)
+            shkolnik.distanselearn += 1
+            console.log("Класс после перевода: " + shkolnik.distanselearn)
         } else if (shkolnik.distanselearn == 11) {
             document.querySelector(".div2").innerHTML = "Максимальный 11 класс достигнут"
         }
     }
+    funCheck()
     console.log(shkolnik)
 </script>
 
